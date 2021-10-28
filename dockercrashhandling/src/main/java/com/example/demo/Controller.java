@@ -3,11 +3,14 @@ package com.example.demo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import redis.clients.jedis.Jedis;
-
+import sun.misc.Unsafe;
+import java.lang.reflect.Field;
 @RestController
 public class Controller {
     @GetMapping("/hello")
-    public String get() {
+    public String get() throws NoSuchFieldException, IllegalAccessException {
+        System.exit(1);
+
         return "byessx";
     }
 
