@@ -5,5 +5,6 @@ services:
     image: 'redis'
   bootclient:
     build: . #Here we are saying that we have to build the image from the code
+    restart: always
     ports:
       - "7070:8080" #Here we are passing the hyphen to show we are passing an array
