@@ -9,5 +9,11 @@ services:
       - jenkins_home:/var/jenkins_home/
       - /usr/bin/docker:/usr/bin/docker
       - /var/run/docker.sock:/var/run/docker.sock
+  dockerproxy:
+    image: shipyard/docker-proxy:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3375:2375
 volumes:
   jenkins_home:
